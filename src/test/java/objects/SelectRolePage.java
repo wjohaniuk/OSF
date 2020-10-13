@@ -1,6 +1,6 @@
 package objects;
 
-import org.openqa.selenium.WebDriver;
+import driver.manager.DriverManager;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -13,7 +13,6 @@ import org.openqa.selenium.support.PageFactory;
 //5 - chcę się zalogować z uprawnieniami recenzenta wniosków NPRH od 2016 roku
 
 public class SelectRolePage {
-    private WebDriver driver;
 
     @FindBy(id = "buttonCancel")
     private WebElement cancelButton;
@@ -31,35 +30,39 @@ public class SelectRolePage {
     private WebElement nPRHRolePicker;
 
 
-    public SelectRolePage(WebDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(driver,this);
+    public SelectRolePage() {
+        PageFactory.initElements(DriverManager.getWebDriver(), this);
     }
 
-    public boolean cancelButtonIsVisible(){
+    public boolean cancelButtonIsVisible() {
         return cancelButton.isDisplayed();
     }
-    public void clickOnContinueButton(){
+
+    public void clickOnContinueButton() {
         continueButton.click();
     }
 
-    public void clickOnCancelButton(){
+    public void clickOnCancelButton() {
         cancelButton.click();
     }
 
-    public void setRwRolePicker(){
+    public void setRwRolePicker() {
         rwRolePicker.click();
     }
-    public void setCzsRolePicker(){
+
+    public void setCzsRolePicker() {
         czsRolePicker.click();
     }
-    public void setPmRolePicker(){
+
+    public void setPmRolePicker() {
         pmRolePicker.click();
     }
-    public void setnCBiRRolePicker(){
+
+    public void setnCBiRRolePicker() {
         nCBiRRolePicker.click();
     }
-    public void setnPRHRolePicker(){
+
+    public void setnPRHRolePicker() {
         nPRHRolePicker.click();
     }
 

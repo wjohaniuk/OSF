@@ -1,12 +1,11 @@
 package objects;
 
-import org.openqa.selenium.WebDriver;
+import driver.manager.DriverManager;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class OSFEditorPage {
-    private WebDriver driver;
 
     @FindBy(id = "kafelWnioski")
     private WebElement kafelWnioski;
@@ -17,9 +16,8 @@ public class OSFEditorPage {
     @FindBy(id = "kafelPomoc")
     private WebElement kafelPomoc;
 
-    public OSFEditorPage(WebDriver driver){
-        this.driver = driver;
-        PageFactory.initElements(driver,this);
+    public OSFEditorPage(){
+        PageFactory.initElements(DriverManager.getWebDriver(),this);
     }
     public boolean kafelWnioskiIsVisible(){
         return kafelWnioski.isDisplayed();
