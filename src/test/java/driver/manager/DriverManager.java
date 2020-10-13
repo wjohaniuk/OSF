@@ -7,7 +7,6 @@ public class DriverManager {
     private static WebDriver driver;
 
     private DriverManager(){
-
     }
 
     public static WebDriver getWebDriver(){

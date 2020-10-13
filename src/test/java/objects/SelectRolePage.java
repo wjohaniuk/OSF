@@ -4,6 +4,7 @@ import driver.manager.DriverManager;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import waits.WaitForElement;
 
 //Wyjaśnienie ról do wyboru:
 //1 - chcę się zalogować z uprawnieniami redaktora/redaktora pomocniczego/czytelnika ORAZ kierownika projektów we wnioskach OSF
@@ -39,10 +40,12 @@ public class SelectRolePage {
     }
 
     public void clickOnContinueButton() {
+        WaitForElement.waitUntilElementIsClickable(continueButton);
         continueButton.click();
     }
 
     public void clickOnCancelButton() {
+        WaitForElement.waitUntilElementIsClickable(cancelButton);
         cancelButton.click();
     }
 

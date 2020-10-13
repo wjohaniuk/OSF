@@ -4,6 +4,7 @@ import driver.manager.DriverManager;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import waits.WaitForElement;
 
 public class LoginPage {
     @FindBy(name = "login")
@@ -26,11 +27,13 @@ public class LoginPage {
     }
 
     public void setLoginField(String username) {
+        WaitForElement.waitUntillElementIsVisible(loginField);
         loginField.clear();
         loginField.sendKeys(username);
     }
 
     public void setPasswordField(String password) {
+        WaitForElement.waitUntillElementIsVisible(passwordField);
         passwordField.clear();
         passwordField.sendKeys(password);
     }
@@ -40,6 +43,7 @@ public class LoginPage {
     }
 
     public String errorMsgLogin() {
+        WaitForElement.waitUntillElementIsVisible(messagesLabel);
         return messagesLabel.getText();
     }
 }
