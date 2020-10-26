@@ -1,6 +1,8 @@
 package objects;
 
 import driver.manager.DriverManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -14,7 +16,7 @@ import waits.WaitForElement;
 //5 - chcę się zalogować z uprawnieniami recenzenta wniosków NPRH od 2016 roku
 
 public class SelectRolePage {
-
+    private Logger logger = LogManager.getRootLogger();
     @FindBy(id = "buttonCancel")
     private WebElement cancelButton;
     @FindBy(id = "buttonContinue")
@@ -42,19 +44,23 @@ public class SelectRolePage {
     public void clickOnContinueButton() {
         WaitForElement.waitUntilElementIsClickable(continueButton);
         continueButton.click();
+        logger.info("klikniecie w przycisk kontynuuj");
     }
 
     public void clickOnCancelButton() {
         WaitForElement.waitUntilElementIsClickable(cancelButton);
         cancelButton.click();
+        logger.info("klikniecie w przycisk anuluj");
     }
 
     public void setRwRolePicker() {
         rwRolePicker.click();
+        logger.info("wybranie roli redktora wniosku");
     }
 
     public void setCzsRolePicker() {
         czsRolePicker.click();
+        logger.info("wybranie roli pracownika MNiSW");
     }
 
     public void setPmRolePicker() {
