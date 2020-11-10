@@ -21,15 +21,13 @@ public class SelectRolePage {
     private WebElement cancelButton;
     @FindBy(id = "buttonContinue")
     private WebElement continueButton;
-    @FindBy(xpath = "//li[@class='fontSizeMedium'][1]/input")
+    @FindBy(xpath = "//input[@id='rola_rw']")
     private WebElement rwRolePicker;
-    @FindBy(xpath = "//li[@class='fontSizeMedium'][2]/input")
+    @FindBy(xpath = "///input[@id='rola_50']")
     private WebElement czsRolePicker;
-    @FindBy(xpath = "//li[@class='fontSizeMedium'][3]/input")
-    private WebElement pmRolePicker;
-    @FindBy(xpath = "//li[@class='fontSizeMedium'][4]/input")
+    @FindBy(xpath = "//input[@id='rola_150']")
     private WebElement nCBiRRolePicker;
-    @FindBy(xpath = "//li[@class='fontSizeMedium'][5]/input")
+    @FindBy(xpath = "//input[@id='rola_70']")
     private WebElement nPRHRolePicker;
 
 
@@ -41,10 +39,11 @@ public class SelectRolePage {
         return cancelButton.isDisplayed();
     }
 
-    public void clickOnContinueButton() {
+    public SelectRolePage clickOnContinueButton() {
         WaitForElement.waitUntilElementIsClickable(continueButton);
         continueButton.click();
         logger.info("klikniecie w przycisk kontynuuj");
+        return this;
     }
 
     public void clickOnCancelButton() {
@@ -53,26 +52,26 @@ public class SelectRolePage {
         logger.info("klikniecie w przycisk anuluj");
     }
 
-    public void setRwRolePicker() {
+    public SelectRolePage setRwRolePicker() {
         rwRolePicker.click();
         logger.info("wybranie roli redktora wniosku");
+        return this;
     }
 
-    public void setCzsRolePicker() {
+    public SelectRolePage setCzsRolePicker() {
         czsRolePicker.click();
         logger.info("wybranie roli pracownika MNiSW");
+        return this;
     }
 
-    public void setPmRolePicker() {
-        pmRolePicker.click();
-    }
-
-    public void setnCBiRRolePicker() {
+    public SelectRolePage setnCBiRRolePicker() {
         nCBiRRolePicker.click();
+        return this;
     }
 
-    public void setnPRHRolePicker() {
+    public SelectRolePage setnPRHRolePicker() {
         nPRHRolePicker.click();
+        return this;
     }
 
 

@@ -30,23 +30,26 @@ public class LoginPage {
         PageFactory.initElements(DriverManager.getWebDriver(), this);
     }
 
-    public void setLoginField(String username) {
+    public LoginPage setLoginField(String username) {
         WaitForElement.waitUntillElementIsVisible(loginField);
         loginField.clear();
         loginField.sendKeys(username);
         logger.info("podanie nazwy usera");
+        return this;
     }
 
-    public void setPasswordField(String password) {
+    public LoginPage setPasswordField(String password) {
         WaitForElement.waitUntillElementIsVisible(passwordField);
         passwordField.clear();
         passwordField.sendKeys(password);
         logger.info("podanie hasła usera");
+        return this;
     }
 
-    public void clickOnLoginButton() {
+    public LoginPage clickOnLoginButton() {
         loginButton.click();
         logger.info("klikniecie w zaloguj");
+        return this;
     }
 
     public String errorMsgLogin() {
