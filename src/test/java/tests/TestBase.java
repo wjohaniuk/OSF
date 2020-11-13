@@ -2,8 +2,11 @@ package tests;
 
 import driver.manager.DriverManager;
 import driver.manager.DriverUtils;
+import navigation.ApplicationURLs;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
+import static navigation.ApplicationURLs.APPLICATION_URL;
 
 public class TestBase {
 
@@ -11,7 +14,7 @@ public class TestBase {
     public void beforeTest() {
         DriverManager.getWebDriver();
         DriverUtils.setInitialConfiguration();
-        DriverUtils.navigateToPage("https://osftest-min.wewn.lsb.opi.org.pl/app/");
+        DriverUtils.navigateToPage(APPLICATION_URL);
 
     }
 

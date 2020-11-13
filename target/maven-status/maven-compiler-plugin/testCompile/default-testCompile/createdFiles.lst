@@ -1,0 +1,12 @@
+driver\BrowserFactory$1.class
+navigation\ApplicationURLs.class
+tests\LoginTests.class
+objects\SelectRolePage.class
+driver\manager\DriverManager.class
+driver\manager\DriverUtils.class
+objects\LoginPage.class
+tests\TestBase.class
+waits\WaitForElement.class
+objects\OSFEditorPage.class
+driver\BrowserFactory.class
+driver\BrowserType.class
