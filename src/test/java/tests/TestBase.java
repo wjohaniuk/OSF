@@ -21,6 +21,6 @@ public class TestBase {
 
     @AfterMethod
     public void afterTest() {
-        DriverManager.disposeDriver();
+  //      DriverManager.disposeDriver();
     }
 }

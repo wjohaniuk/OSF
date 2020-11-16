@@ -1,11 +1,14 @@
 package objects;
 
 import driver.manager.DriverManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class OSFEditorPage {
+    private Logger logger = LogManager.getRootLogger();
 
     @FindBy(id = "kafelWnioski")
     private WebElement kafelWnioski;
@@ -21,5 +24,10 @@ public class OSFEditorPage {
     }
     public boolean kafelWnioskiIsVisible(){
         return kafelWnioski.isDisplayed();
+    }
+    public OSFEditorPage ClickOnNowyWnisoek(){
+        kafelNowyWniosek.click();
+        logger.info("klikniecie w Nowy wniosek");
+        return this;
     }
 }
