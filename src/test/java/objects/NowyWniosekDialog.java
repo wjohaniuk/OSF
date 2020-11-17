@@ -24,6 +24,8 @@ public class NowyWniosekDialog {
     private WebElement utworzWniosekButton;
     @FindBy(xpath = "//button/span[contains(text(),'Anuluj')]")
     private WebElement anulujButton;
+    @FindBy(xpath = "//div/label[contains(text(),'ID wniosku')]/following::div[@class='ui-panelgrid-cell ui-grid-col-8'][1]")
+    private WebElement idWniosku;
 
     public NowyWniosekDialog() {
         PageFactory.initElements(DriverManager.getWebDriver(), this);
@@ -44,7 +46,13 @@ public class NowyWniosekDialog {
 
     public NowyWniosekDialog KliknijWUtworzWniosek() {
         utworzWniosekButton.click();
-        logger.info("Klikniecei w utworz wniosek przycisk");
+        logger.info("Klikniecie w przycisk utworz wniosek");
         return this;
+    }
+    public boolean CzyDodanyWniosek(){
+        WaitForElement.waitUntillElementIsVisible(idWniosku);
+        logger.info("Wniosek o numerze: " + idWniosku.getText() + " został utworzony.");
+        return idWniosku.isDisplayed();
+
     }
 }

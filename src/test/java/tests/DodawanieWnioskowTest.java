@@ -25,7 +25,8 @@ public class DodawanieWnioskowTest extends TestBase {
         NowyWniosekDialog nowyWniosekDialog = new NowyWniosekDialog();
         nowyWniosekDialog.PobierzKomunikat()
                 .KliknijWOswiadczenie()
-                .KliknijWUtworzWniosek();
+                .KliknijWUtworzWniosek()
+                .CzyDodanyWniosek();
 
 
     }
