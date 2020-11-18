@@ -6,9 +6,9 @@ import org.testng.annotations.Test;
 
 import static navigation.ApplicationURLs.APPLICATION_URL;
 
-public class DodawanieWnioskowTest extends TestBase {
+public class UtworzWniosekTest extends TestBase {
     @Test
-    public void DodajWniosekDialogJakoRW() throws InterruptedException {
+    public void DodajWniosekDialogJakoRW() {
         DriverUtils.navigateToPage(APPLICATION_URL);
         LoginPage loginPage = new LoginPage();
         loginPage.setLoginField("automattest4")
