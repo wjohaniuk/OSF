@@ -15,7 +15,7 @@ public class DriverManager {
 
     public static WebDriver getWebDriver(){
         if (driver==null){
-            driver = BrowserFactory.getBrowser(BrowserType.CHROME);
+            driver = BrowserFactory.getBrowser(BrowserType.FIREFOX);
         }
         return driver;
     }
